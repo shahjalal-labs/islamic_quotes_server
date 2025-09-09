@@ -13,4 +13,4 @@ router.delete("/recipe/:id", RecipeControllers.deleteaRecipe);
 router.post("/recipes", RecipeControllers.createMultipleRecipe);
 router.post("/create-recipe", RecipeControllers.createRecipe);
 
-export const recipeRoutes = router;
+export const quotesRoutes = router;

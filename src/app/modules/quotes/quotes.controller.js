@@ -1,6 +1,6 @@
 import sendResponose from "../../../utils/sendResponose.js";
 
-import { RecipeServices } from "./recipe.service.js";
+import { RecipeServices } from "./quotes.service.js";
 
 const createRecipe = async (req, res, next) => {
   const coffee = req.body;
