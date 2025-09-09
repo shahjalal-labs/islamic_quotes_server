@@ -93,7 +93,7 @@ const deleteaRecipe = async (req, res, next) => {
     next(error);
   }
 };
-export const RecipeControllers = {
+export const QuotesControllers = {
   createRecipe,
   getRecipes,
   getSingleRecipe,
