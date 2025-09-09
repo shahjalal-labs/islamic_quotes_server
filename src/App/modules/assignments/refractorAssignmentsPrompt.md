@@ -1,30 +1,5 @@
 You are a **senior full-stack developer**.
 
-## 📌 Task
-
-You are given a real-world code module located at:
-
-```
-/run/media/sj/developer/web/L1B11/career/jobTask/islamicquotes/islamic_quotes_server/src/App/modules/assignments
-```
-
-Refactor the entire codebase **without modifying any UI or changing behavior**. Instead, improve it using:
-
-- ✅ Clear separation of concerns
-- ✅ Consistent, semantic naming conventions
-- ✅ Modular architecture (hooks, services, utils, components)
-- ✅ Scalable file/folder structure
-- ✅ Industry-standard project layout and architecture
-- ✅ Readable, testable, production-grade code
-- ✅ 100% behavior and API compatibility
-
-👉 Output the refactored code to a new folder: `assignments_refactored`
-
-Also return a `.sh` script that will:
-- Create that folder
-- Write all refactored files
-- Run `git add` and `git commit` with message: `refactor: added improved assignments version`
-
 ---
 
 ## 🌲 Full Project Structure (cwd)
@@ -108,6 +83,7 @@ Also return a `.sh` script that will:
 ## 📄 Module Files & Contents
 
 ### `assignmentData.json`
+
 ```javascripton
 [
   {
@@ -214,6 +190,7 @@ Also return a `.sh` script that will:
 ```
 
 ### `assignments.controllers.js`
+
 ```javascript
 import sendResponse from "../../utils/sendResponse.js";
 import { AssignmentServices } from "./assignments.service.js";
@@ -328,6 +305,7 @@ export const AssignmentControllers = {
 ```
 
 ### `assignments.model.js`
+
 ```javascript
 import mongoose from "mongoose";
 
@@ -378,6 +356,7 @@ export default Assignment;
 ```
 
 ### `assignments.route.js`
+
 ```javascript
 import { AssignmentControllers } from "./assignments.controllers.js";
 
@@ -421,6 +400,7 @@ export const AssignmentRoutes = router;
 ```
 
 ### `assignments.service.js`
+
 ```javascript
 import Assignment from "./assignments.model.js";
 
@@ -488,6 +468,7 @@ export const AssignmentServices = {
 ```
 
 ### `assignments.validation.js`
+
 ```javascript
 import Joi from "joi";
 
@@ -545,6 +526,7 @@ export const AssignmentsValidationSchema = {
 ```
 
 ### `assignmentsApi.hur`
+
 ```hur
 GET  http://localhost:5000/api/v1/assignments
 
@@ -666,6 +648,7 @@ Content-Type: application/json
 ```
 
 ### `assignmentsApi.hurl`
+
 ```hurl
 GET  http://localhost:5000/api/v1/assignments
 GET  http://localhost:5000/api/v1/assignments?search=css
@@ -730,3 +713,90 @@ Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImltcmFuQGdtYWlsL
 
 
 ```
+
+this an example of my current context for your clarity.
+
+your task you will create a new module for quotes
+
+project requirement: # 📘 Project Requirements — TechOrbit IT Islamic Quotes Management App
+
+> Career TechOrbit IT
+> Sep 7, 2025, 8:56 AM (2 days ago)
+> to career, bcc: me
+> Assalamu Alaikum Dear Candidates,
+>
+> Thank you for applying for the Full-Stack Developer position at TechOrbit IT.  
+> As part of the recruitment process, we would like to evaluate your technical skills through a practical task.
+>
+> ---
+>
+> 📌 **Your Task:**  
+> Build a **Full-Stack Islamic Quotes Management Application** with the following requirements:
+>
+> 1. **Frontend:**
+>    - Use **Next.js (or React.js)** with Tailwind CSS.
+>    - Create pages for: Home, Quotes List, Add Quote, and Login/Register.
+>    - Ensure mobile responsiveness.
+> 2. **Backend:**
+>    - Use **Node.js + Express.js** with MongoDB, SQL etc .
+>    - Implement REST APIs for authentication (JWT-based) and CRUD operations for quotes.
+>    - Only authenticated users can add quotes.
+> 3. **Features:**
+>    - User Authentication (Register/Login/Logout).
+>    - Display Islamic Quotes (stored in DB).
+>    - Admin can approve, delete/edit quotes.
+>    - Include proper error handling & validation.  
+>      -after approved user can't delete qoutes
+> 4. **Documentation:**
+>    - Provide a complete **README.md** file explaining the project, setup, and installation.
+>    - Mention which technologies you used and why.
+>    - Include an installation guide so we can run the project easily.
+>
+> ---
+>
+> ⚠️ **Important Notes:**
+>
+> - Do not use AI-generated code without understanding it.
+> - If you take help, make sure you fully understand and can explain it.
+> - Deadline:
+
+data model i design
+
+# 🗄️ Data Model — Islamic Quotes Management App
+
+---
+
+## 📌 Users Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "name": "string",
+  "email": "string (unique)",
+  "role": "string (user | admin)",
+  "createdAt": "Date",
+  "updatedAt": "Date"
+}
+```
+
+## 📌 Quotes Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "text": "string", // Islamic quote text
+  "author": "string", // Quran, Hadith, or Scholar name
+  "submittedBy": "ObjectId", // Reference to Users Collection
+  "status": "string (pending | approved)",
+  "createdAt": "Date",
+  "updatedAt": "Date"
+}
+```
+
+you can change data model for better improvement, but user collection no need password at firebase will handle password
+
+Also return a `.sh` script that will:
+
+- Create that module
+- Write all required files
+- Run `git add` and `git commit` with message: `refactor: added improved assignments version`
