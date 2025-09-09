@@ -1,0 +1,201 @@
+[
+  {
+    "title": "Beef Tehari",
+    "image": "https://images.deepai.org/art-image/2f454155dda24c3092d82313c5418387/a-traditional-bangladeshi-beef-tehari-served-on-a-whi.jpg",
+    "ingredients": [
+      "Beef",
+      "Basmati Rice",
+      "Onion",
+      "Garlic",
+      "Ginger",
+      "Yogurt",
+      "Spices"
+    ],
+    "instructions": "Cook beef with spices. Add rice and simmer until fully cooked.",
+    "cuisine": "Bangladeshi",
+    "prepTime": 90,
+    "categories": ["Lunch", "Dinner"],
+    "likeCount": 35,
+    "userEmail": "bdfoodlover@example.com",
+    "userName": "Ayesha"
+  },
+  {
+    "title": "Shorshe Ilish",
+    "image": "https://images.deepai.org/art-image/dab0727e89d749f181a2b26550ba8ee8/hilsa-fish-cooked-in-mustard-sauce-shorshe-ilish-serv.jpg",
+    "ingredients": [
+      "Hilsa Fish",
+      "Mustard Paste",
+      "Green Chili",
+      "Mustard Oil",
+      "Salt",
+      "Turmeric"
+    ],
+    "instructions": "Marinate hilsa. Cook in mustard paste with oil and green chilies.",
+    "cuisine": "Bangladeshi",
+    "prepTime": 40,
+    "categories": ["Lunch", "Dinner"],
+    "likeCount": 28,
+    "userEmail": "ilishking@example.com",
+    "userName": "Reza"
+  },
+  {
+    "title": "Chicken Rezala",
+    "image": "https://images.deepai.org/art-image/d95e3d7921f1457f832c3ce005c26946/white-chicken-curry-bangladeshi-chicken-rezala-in-a-c.jpg",
+    "ingredients": [
+      "Chicken",
+      "Onion Paste",
+      "Yogurt",
+      "Ginger",
+      "Garlic",
+      "Cardamom",
+      "Cloves",
+      "Ghee"
+    ],
+    "instructions": "Slow-cook chicken in white curry with aromatic spices and yogurt.",
+    "cuisine": "Bangladeshi",
+    "prepTime": 60,
+    "categories": ["Dinner"],
+    "likeCount": 20,
+    "userEmail": "rezalaqueen@example.com",
+    "userName": "Sumaiya"
+  },
+  {
+    "title": "Chingri Malai Curry",
+    "image": "https://images.deepai.org/art-image/747917527f894e3982dd1b95d9d299da/bangladeshi-prawn-coconut-curry-chingri-malai-curry-p.jpg",
+    "ingredients": [
+      "Prawns",
+      "Coconut Milk",
+      "Onion",
+      "Garlic",
+      "Ginger",
+      "Turmeric",
+      "Green Chili"
+    ],
+    "instructions": "Cook prawns in coconut milk with spices until creamy and tender.",
+    "cuisine": "Bangladeshi",
+    "prepTime": 45,
+    "categories": ["Dinner", "Seafood"],
+    "likeCount": 32,
+    "userEmail": "malailover@example.com",
+    "userName": "Farhan"
+  },
+  {
+    "title": "Panta Ilish",
+    "image": "https://images.deepai.org/art-image/fcf2a5d912aa4eb4b3ec2296cada6d17/panta-ilish-fermented-rice-with-fried-hilsa-fish-slic.jpg",
+    "ingredients": [
+      "Fermented Rice",
+      "Hilsa Fry",
+      "Onion",
+      "Green Chili",
+      "Mustard Oil",
+      "Salt"
+    ],
+    "instructions": "Soak rice overnight. Serve with fried hilsa and mustard oil toppings.",
+    "cuisine": "Bangladeshi",
+    "prepTime": 20,
+    "categories": ["Breakfast", "Traditional"],
+    "likeCount": 40,
+    "userEmail": "tradition@example.com",
+    "userName": "Mamun"
+  },
+  {
+    "title": "Patishapta Pitha",
+    "image": "https://images.deepai.org/art-image/36e6f7c602a5472ab520d4e9ab19cbf4/bengali-patishapta-pitha-soft-rice-flour-crepes-rolle.jpg",
+    "ingredients": ["Rice Flour", "Coconut", "Jaggery", "Milk", "Cardamom"],
+    "instructions": "Make thin crepes, stuff with coconut-jaggery filling, and roll.",
+    "cuisine": "Bangladeshi",
+    "prepTime": 35,
+    "categories": ["Dessert", "Traditional"],
+    "likeCount": 18,
+    "userEmail": "pithalover@example.com",
+    "userName": "Shirin"
+  },
+  {
+    "title": "Butter Chicken",
+    "image": "https://images.deepai.org/art-image/d9420ff50d6847f1a0ae63987db0ee6a/authentic-italian-margherita-pizza-with-mozzarella-ch.jpg",
+    "ingredients": ["Chicken", "Butter", "Tomato", "Cream", "Spices"],
+    "instructions": "Cook chicken with spices. Make tomato-based sauce with cream and butter. Combine and simmer.",
+    "cuisine": "Indian",
+    "preparationTime": 45,
+    "categories": ["Dinner", "Spicy"],
+    "likeCount": 12,
+    "userEmail": "muhommodshahjalal@gmail.com"
+  },
+  {
+    "title": "Tacos al Pastor",
+    "image": "https://images.deepai.org/art-image/b5baf97e05f04ddea5d146c3cc7c65cb/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
+    "ingredients": ["Pork", "Pineapple", "Onion", "Tortilla", "Chili"],
+    "instructions": "Grill pork with spices, serve in tortilla with pineapple and onion.",
+    "cuisine": "Mexican",
+    "preparationTime": 35,
+    "categories": ["Lunch"],
+    "likeCount": 18,
+    "userEmail": "muhommodshahjalal@gmail.com"
+  },
+  {
+    "title": "Margherita Pizza",
+    "image": "https://images.deepai.org/art-image/b5baf97e05f04ddea5d146c3cc7c65cb/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
+    "ingredients": ["Dough", "Tomato Sauce", "Mozzarella", "Basil"],
+    "instructions": "Spread sauce on dough, add cheese and basil. Bake until crust is golden.",
+    "cuisine": "Italian",
+    "preparationTime": 25,
+    "categories": ["Dinner", "Vegetarian"],
+    "likeCount": 22,
+    "userEmail": "muhommodshahjalal@gmail.com"
+  },
+  {
+    "title": "Sushi Rolls",
+    "image": "https://images.deepai.org/art-image/06fe76ea68974d67aa54501c1111c88c/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
+    "ingredients": ["Rice", "Nori", "Fish", "Cucumber", "Avocado"],
+    "instructions": "Layer rice on nori, add fillings, and roll tightly. Slice and serve.",
+    "cuisine": "Japanese",
+    "preparationTime": 50,
+    "categories": ["Lunch", "Healthy"],
+    "likeCount": 9,
+    "userEmail": "muhommodshahjalal@gmail.com"
+  },
+  {
+    "title": "Tom Yum Soup",
+    "image": "https://images.deepai.org/art-image/6d46f6ee7d8d4b07a61bf4b334c62261/hot-and-sour-thai-tom-yum-soup-with-shrimp-mushrooms-.jpg",
+    "ingredients": ["Shrimp", "Lemongrass", "Mushroom", "Lime", "Chili"],
+    "instructions": "Boil broth with lemongrass and lime leaves. Add shrimp and veggies.",
+    "cuisine": "Thai",
+    "preparationTime": 30,
+    "categories": ["Dinner", "Soup"],
+    "likeCount": 14,
+    "userEmail": "muhommodshahjalal@gmail.com"
+  },
+  {
+    "title": "Miso Ramen",
+    "image": "https://images.deepai.org/art-image/d1f02bcc80564822a5c95170d69afec8/japanese-miso-ramen-bowl-with-sliced-pork-boiled-egg-.jpg",
+    "ingredients": ["Ramen Noodles", "Miso", "Egg", "Corn", "Pork"],
+    "instructions": "Cook noodles, prepare miso broth. Add toppings and serve hot.",
+    "cuisine": "Japanese",
+    "preparationTime": 40,
+    "categories": ["Dinner"],
+    "likeCount": 19,
+    "userEmail": "muhommodshahjalal@gmail.com"
+  },
+  {
+    "title": "Beef Pho",
+    "image": "https://images.deepai.org/art-image/e90c5bf903c641d1a3ce2c7a3f5c2ee9/vietnamese-pho-bowl-with-thin-beef-slices-rice-noodle.jpg",
+    "ingredients": ["Beef", "Rice Noodles", "Cinnamon", "Ginger", "Onion"],
+    "instructions": "Simmer beef broth with spices. Add noodles and sliced beef.",
+    "cuisine": "Vietnamese",
+    "preparationTime": 60,
+    "categories": ["Soup", "Dinner"],
+    "likeCount": 15,
+    "userEmail": "muhommodshahjalal@gmail.com"
+  },
+  {
+    "title": "Shahi Korma",
+    "image": "https://images.deepai.org/art-image/61419ff13576440da09d1da537c2f449/traditional-bangladeshi-shahi-korma-in-a-rich-creamy-.jpg",
+    "ingredients": ["Mutton", "Yogurt", "Cream", "Nuts", "Spices"],
+    "instructions": "Cook meat with creamy sauce and aromatic spices until tender.",
+    "cuisine": "Bangladeshi",
+    "preparationTime": 75,
+    "categories": ["Dinner", "Festive"],
+    "likeCount": 23,
+    "userEmail": "muhommodshahjalal@gmail.com"
+  }
+]
