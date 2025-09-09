@@ -2,13 +2,13 @@ import sendResponose from "../../../utils/sendResponose.js";
 
 import { QuotesServices } from "./quotes.service.js";
 
-const createRecipe = async (req, res, next) => {
+const createQuote = async (req, res, next) => {
   const coffee = req.body;
   try {
-    const response = await QuotesServices.createRecipeIntoDB(coffee);
+    const response = await QuotesServices.createQuoteIntoDB(coffee);
     sendResponose(res, {
       success: true,
-      message: "Recipe created successfully",
+      message: "Quote created successfully",
       data: response,
     });
   } catch (error) {
@@ -16,13 +16,13 @@ const createRecipe = async (req, res, next) => {
   }
 };
 
-const createMultipleRecipe = async (req, res, next) => {
-  const coffees = req.body;
+const createMultipleQuote = async (req, res, next) => {
+  const quotes = req.body;
   try {
-    const response = await QuotesServices.createMultipleRecipeIntoDB(coffees);
+    const response = await QuotesServices.createMultipleQuoteIntoDB(quotes);
     sendResponose(res, {
       success: true,
-      message: "Recipes created successfully",
+      message: "Quotes created successfully",
       data: response,
     });
   } catch (error) {
@@ -30,13 +30,13 @@ const createMultipleRecipe = async (req, res, next) => {
   }
 };
 
-const getRecipes = async (req, res, next) => {
+const getQuotes = async (req, res, next) => {
   try {
     const email = req.query.email;
 
     const limit = Number(req.query.limit) || 0;
     const likeCount = req.query.likeCount;
-    const response = await QuotesServices.getRecipesFromDB({
+    const response = await QuotesServices.getQuotesFromDB({
       email,
       likeCount,
       limit,
@@ -51,11 +51,11 @@ const getRecipes = async (req, res, next) => {
   }
 };
 
-const getSingleRecipe = async (req, res, next) => {
+const getSingleQuote = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const response = await QuotesServices.getSingleRecipeFromDB(id);
+    const response = await QuotesServices.getSingleQuoteFromDB(id);
     sendResponose(res, {
       success: true,
       message: "Single coffee fetched successfully",
@@ -66,14 +66,14 @@ const getSingleRecipe = async (req, res, next) => {
   }
 };
 
-const updateRecipe = async (req, res, next) => {
+const updateQuote = async (req, res, next) => {
   try {
     const { id } = req.params;
     const coffee = req.body;
-    const response = await QuotesServices.updateRecipeInDB(id, coffee);
+    const response = await QuotesServices.updateQuoteInDB(id, coffee);
     sendResponose(res, {
       success: true,
-      message: "Recipe updated successfully",
+      message: "Quote updated successfully",
       data: response,
     });
   } catch (error) {
@@ -81,12 +81,12 @@ const updateRecipe = async (req, res, next) => {
   }
 };
 
-const deleteaRecipe = async (req, res, next) => {
+const deleteaQuote = async (req, res, next) => {
   try {
-    const result = await QuotesServices.deleteRecipeFromDB(req.params.id);
+    const result = await QuotesServices.deleteQuoteFromDB(req.params.id);
     sendResponose(res, {
       success: true,
-      message: "Recipe deleted successfully",
+      message: "Quote deleted successfully",
       data: result,
     });
   } catch (error) {
@@ -94,10 +94,10 @@ const deleteaRecipe = async (req, res, next) => {
   }
 };
 export const QuotesControllers = {
-  createRecipe,
-  getRecipes,
-  getSingleRecipe,
-  updateRecipe,
-  createMultipleRecipe,
-  deleteaRecipe,
+  createQuote,
+  getQuotes,
+  getSingleQuote,
+  updateQuote,
+  createMultipleQuote,
+  deleteaQuote,
 };

@@ -1,4 +1,4 @@
-GET  http://localhost:5000/api/v1/recipes
+GET  http://localhost:5000/api/v1/quotes
 
 GET  http://localhost:5000/api/v1/recipes?email=bdfoodlover@example.com&limit=2
 GET  https://web.programming-hero.com/web-11/video/web-11-60-7-recap-create-token-and-set-token-to-the-cookies?from=catchup

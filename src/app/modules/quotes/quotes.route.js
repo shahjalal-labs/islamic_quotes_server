@@ -4,13 +4,13 @@ import { QuotesControllers } from "./quotes.controller.js";
 
 const router = Router();
 
-// router.get("/recipes", verifyJWT, RecipeControllers.getRecipes);
-router.get("/recipes", QuotesControllers.getRecipes);
+// router.get("/quotes", verifyJWT, quoteControllers.getquotes);
+router.get("/quotes", QuotesControllers.getQuotes);
 
-router.get("/recipe/:id", QuotesControllers.getSingleRecipe);
-router.patch("/recipe/:id", QuotesControllers.updateRecipe);
-router.delete("/recipe/:id", QuotesControllers.deleteaRecipe);
-router.post("/recipes", QuotesControllers.createMultipleRecipe);
-router.post("/create-recipe", QuotesControllers.createRecipe);
+router.get("/quote/:id", QuotesControllers.getSingleQuote);
+router.patch("/quote/:id", QuotesControllers.updateQuote);
+router.delete("/quote/:id", QuotesControllers.deleteaQuote);
+router.post("/quotes", QuotesControllers.createMultipleQuote);
+router.post("/create-quote", QuotesControllers.createQuote);
 
 export const quotesRoutes = router;
