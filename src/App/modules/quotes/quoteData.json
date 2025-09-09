@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "q1",
+    "text": "Indeed, with hardship comes ease.",
+    "author": "Quran",
+    "submittedByEmail": "user1@example.com",
+    "status": "approved",
+    "createdAt": "2025-09-01T00:00:00.000Z"
+  },
+  {
+    "_id": "q2",
+    "text": "Actions are judged by intentions.",
+    "author": "Prophet Muhammad (pbuh)",
+    "submittedByEmail": "user2@example.com",
+    "status": "pending",
+    "createdAt": "2025-09-02T00:00:00.000Z"
+  }
+]
