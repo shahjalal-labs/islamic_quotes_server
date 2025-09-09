@@ -1,38 +1,40 @@
 import { ObjectId } from "mongodb";
 import { getDB } from "../../config/db.js";
 
-const getRecipeCollection = () => {
-  const recipeCollection = getDB().collection("recipes");
+const getQuotesCollection = () => {
+  const quotesCollection = getDB().collection("quotes");
 
-  return recipeCollection;
+  return quotesCollection;
 };
-const createRecipeIntoDB = async (coffee) => {
-  const recipeCollection = getRecipeCollection();
+const quotesCollection = getQuotesCollection();
 
-  const response = await recipeCollection.insertOne(coffee);
+const createQuoteIntoDB = async (coffee) => {
+  // const recipeCollection = getQuotesCollection();
+
+  const response = await quotesCollection.insertOne(coffee);
   return response;
 };
 
-const createMultipleRecipeIntoDB = async (coffees) => {
-  const recipeCollection = getRecipeCollection();
-  const response = await recipeCollection.insertMany(coffees);
+const createMultipleQuoteIntoDB = async (coffees) => {
+  // const recipeCollection = getQuotesCollection();
+  const response = await quotesCollection.insertMany(coffees);
   return response;
 };
 
-const getRecipesFromDB = async (query) => {
+const getQuotesFromDB = async (query) => {
   const limit = query.limit || 0;
   const email = query.email;
-  const recipeCollection = await getRecipeCollection();
+  // const recipeCollection = await getQuotesCollection();
   let response;
   if (email) {
-    response = await recipeCollection
+    response = await quotesCollection
       .find({ userEmail: email })
       .sort({ likeCount: -1 })
       .limit(limit)
       .toArray();
     return response;
   }
-  response = await recipeCollection
+  response = await quotesCollection
     .find()
     .sort({ likeCount: -1 })
     .limit(limit)
@@ -40,21 +42,21 @@ const getRecipesFromDB = async (query) => {
   return response;
 };
 
-const getSingleRecipeFromDB = async (id) => {
-  const recipeCollection = await getRecipeCollection();
-  const response = await recipeCollection.findOne({ _id: new ObjectId(id) });
+const getSingleQuoteFromDB = async (id) => {
+  // const recipeCollection = await getQuotesCollection();
+  const response = await quotesCollection.findOne({ _id: new ObjectId(id) });
 
   return response;
 };
 
-const deleteRecipeFromDB = async (id) => {
-  const recipeCollection = await getRecipeCollection();
-  const response = await recipeCollection.deleteOne({ _id: new ObjectId(id) });
+const deleteQuoteFromDB = async (id) => {
+  // const recipeCollection = await getQuotesCollection();
+  const response = await quotesCollection.deleteOne({ _id: new ObjectId(id) });
   return response;
 };
 
-const updateRecipeInDB = async (id, coffee) => {
-  const recipeCollection = await getRecipeCollection();
+const updateQuoteIntoDB = async (id, coffee) => {
+  // const recipeCollection = await getQuotesCollection();
 
   const filter = {
     _id: new ObjectId(id),
@@ -66,15 +68,15 @@ const updateRecipeInDB = async (id, coffee) => {
   const options = {
     upsert: false,
   };
-  const response = await recipeCollection.updateOne(filter, updateDoc, options);
+  const response = await quotesCollection.updateOne(filter, updateDoc, options);
   return response;
 };
 
-export const RecipeServices = {
-  createRecipeIntoDB,
-  getRecipesFromDB,
-  getSingleRecipeFromDB,
-  deleteRecipeFromDB,
-  updateRecipeInDB,
-  createMultipleRecipeIntoDB,
+export const QuotesServices = {
+  createQuoteIntoDB,
+  getQuotesFromDB,
+  getSingleQuoteFromDB,
+  deleteQuoteFromDB,
+  updateQuoteIntoDB,
+  createMultipleQuoteIntoDB,
 };
