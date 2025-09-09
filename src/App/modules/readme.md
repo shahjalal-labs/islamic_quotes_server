@@ -1,3 +1,4 @@
+```
 .
 ├── bars.env.example
 ├── bun.lock
@@ -35,4 +36,4 @@
 │   │   │   ├── submission.controller.js
 │   │   │   ├── submission.model.js
 │   │   │   ├── submission.route.js
-── structure.md
+```
