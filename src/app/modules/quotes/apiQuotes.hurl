@@ -1,372 +1,72 @@
-GET  http://localhost:5000/api/v1/quotes
+# 🕌 Islamic Quotes API Endpoints
 
-GET  http://localhost:5000/api/v1/recipes?email=bdfoodlover@example.com&limit=2
-GET  https://web.programming-hero.com/web-11/video/web-11-60-7-recap-create-token-and-set-token-to-the-cookies?from=catchup
+Base URL: `http://localhost:5000/api/v1`
+
+---
+
+## 📜 Get All Quotes
+```http
+GET http://localhost:5000/api/v1/quotes
+
+# Get Quotes by User Email
+GET http://localhost:5000/api/v1/quotes?email=abdullah@example.com&limit=3
+
+# Get Single Quote
+GET http://localhost:5000/api/v1/quote/64b8e4f5c1a5e21a9f12cd34
+
+# Delete a Quote (Admin Only)
+DELETE http://localhost:5000/api/v1/quote/64b8e4f5c1a5e21a9f12cd34
 
 
-
-
--------- get single recipe --------
-GET  http://localhost:5000/api/v1/recipe/682c02054a5914e09b610bc0
-------- get single recipe --------
-
-
-DELETE http://localhost:5000/api/v1/recipe/682d9e55fc6a4cf4a12455a3
-
-
-
-PATCH  http://localhost:5000/api/v1/recipe/682e76a944cf8e2f320c902c
+#Update a Quote (Admin Only)
+PATCH http://localhost:5000/api/v1/quote/64b8e4f5c1a5e21a9f12cd34
 Content-Type: application/json
+
 {
-    "title": "Mexican Traditional Fastfood"
+  "text": "Indeed, with hardship comes ease. — Surah Ash-Sharh 94:6"
 }
 
------create single recipe-----
-
-POST http://localhost:5000/api/v1/create-recipe
+# Create a Single Quote (Authenticated User)
+POST http://localhost:5000/api/v1/quote
 Content-Type: application/json
+
 {
-    "title": "Beef Tehari",
-    "image": "https://images.deepai.org/art-image/2f454155dda24c3092d82313c5418387/a-traditional-bangladeshi-beef-tehari-served-on-a-whi.jpg",
-    "ingredients": [
-      "Beef",
-      "Basmati Rice",
-      "Onion",
-      "Garlic",
-      "Ginger",
-      "Yogurt",
-      "Spices"
-    ],
-    "instructions": "Cook beef with spices. Add rice and simmer until fully cooked.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 90,
-    "categories": ["Lunch", "Dinner"],
-    "likeCount": 35,
-    "userEmail": "bdfoodlover@example.com",
-    "userName": "Ayesha"
+  "text": "The strong man is not the one who overcomes others with his strength, but the one who controls himself when angry. — Prophet Muhammad ﷺ",
+  "author": "Hadith (Bukhari & Muslim)",
+  "submittedBy": "64b8e4f5c1a5e21a9f12cd01",
+  "status": "pending"
 }
 
 
---- create  multiple recipe -------
+# Create Multiple Quotes (Bulk Insert)
 
-POST http://localhost:5000/api/v1/recipes
+POST http://localhost:5000/api/v1/quotes
 Content-Type: application/json
+
 [
   {
-    "title": "Butter Chicken",
-    "image": "https://images.deepai.org/art-image/d9420ff50d6847f1a0ae63987db0ee6a/authentic-italian-margherita-pizza-with-mozzarella-ch.jpg",
-    "ingredients": ["Chicken", "Butter", "Tomato", "Cream", "Spices"],
-    "instructions": "Cook chicken with spices. Make tomato-based sauce with cream and butter. Combine and simmer.",
-    "cuisine": "Indian",
-    "prepTime": 45,
-    "categories": ["Dinner", "Spicy"],
-    "likeCount": 12,
-    "userEmail": "muhommodshahjalal@gmail.com"
+    "text": "Indeed, prayer prohibits immorality and wrongdoing. — Surah Al-Ankabut 29:45",
+    "author": "Quran",
+    "submittedBy": "abdullah@example.com",
+    "status": "pending"
   },
   {
-    "title": "Tacos al Pastor",
-    "image": "https://images.deepai.org/art-image/b5baf97e05f04ddea5d146c3cc7c65cb/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
-    "ingredients": ["Pork", "Pineapple", "Onion", "Tortilla", "Chili"],
-    "instructions": "Grill pork with spices, serve in tortilla with pineapple and onion.",
-    "cuisine": "Mexican",
-    "prepTime": 35,
-    "categories": ["Lunch"],
-    "likeCount": 18,
-    "userEmail": "muhommodshahjalal@gmail.com"
+    "text": "He who does not thank people, does not thank Allah. — Hadith",
+    "author": "Prophet Muhammad ﷺ",
+    "submittedBy": "fatima@example.com",
+    "status": "pending"
   },
   {
-    "title": "Margherita Pizza",
-    "image": "https://images.deepai.org/art-image/b5baf97e05f04ddea5d146c3cc7c65cb/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
-    "ingredients": ["Dough", "Tomato Sauce", "Mozzarella", "Basil"],
-    "instructions": "Spread sauce on dough, add cheese and basil. Bake until crust is golden.",
-    "cuisine": "Italian",
-    "prepTime": 25,
-    "categories": ["Dinner", "Vegetarian"],
-    "likeCount": 22,
-    "userEmail": "muhommodshahjalal@gmail.com"
+    "text": "The best among you are those who have the best manners and character. — Prophet Muhammad ﷺ",
+    "author": "Hadith (Bukhari)",
+    "submittedBy": "aisha@example.com",
+    "status": "pending"
   },
   {
-    "title": "Sushi Rolls",
-    "image": "https://images.deepai.org/art-image/06fe76ea68974d67aa54501c1111c88c/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
-    "ingredients": ["Rice", "Nori", "Fish", "Cucumber", "Avocado"],
-    "instructions": "Layer rice on nori, add fillings, and roll tightly. Slice and serve.",
-    "cuisine": "Japanese",
-    "prepTime": 50,
-    "categories": ["Lunch", "Healthy"],
-    "likeCount": 9,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Tom Yum Soup",
-    "image": "https://images.deepai.org/art-image/6d46f6ee7d8d4b07a61bf4b334c62261/hot-and-sour-thai-tom-yum-soup-with-shrimp-mushrooms-.jpg",
-    "ingredients": ["Shrimp", "Lemongrass", "Mushroom", "Lime", "Chili"],
-    "instructions": "Boil broth with lemongrass and lime leaves. Add shrimp and veggies.",
-    "cuisine": "Thai",
-    "prepTime": 30,
-    "categories": ["Dinner", "Soup"],
-    "likeCount": 14,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Miso Ramen",
-    "image": "https://images.deepai.org/art-image/d1f02bcc80564822a5c95170d69afec8/japanese-miso-ramen-bowl-with-sliced-pork-boiled-egg-.jpg",
-    "ingredients": ["Ramen Noodles", "Miso", "Egg", "Corn", "Pork"],
-    "instructions": "Cook noodles, prepare miso broth. Add toppings and serve hot.",
-    "cuisine": "Japanese",
-    "prepTime": 40,
-    "categories": ["Dinner"],
-    "likeCount": 19,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Beef Pho",
-    "image": "https://images.deepai.org/art-image/e90c5bf903c641d1a3ce2c7a3f5c2ee9/vietnamese-pho-bowl-with-thin-beef-slices-rice-noodle.jpg",
-    "ingredients": ["Beef", "Rice Noodles", "Cinnamon", "Ginger", "Onion"],
-    "instructions": "Simmer beef broth with spices. Add noodles and sliced beef.",
-    "cuisine": "Vietnamese",
-    "prepTime": 60,
-    "categories": ["Soup", "Dinner"],
-    "likeCount": 15,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Shahi Korma",
-    "image": "https://images.deepai.org/art-image/61419ff13576440da09d1da537c2f449/traditional-bangladeshi-shahi-korma-in-a-rich-creamy-.jpg",
-    "ingredients": ["Mutton", "Yogurt", "Cream", "Nuts", "Spices"],
-    "instructions": "Cook meat with creamy sauce and aromatic spices until tender.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 75,
-    "categories": ["Dinner", "Festive"],
-    "likeCount": 23,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  }
-]
-----create  multiple recipe -------
-POST http://localhost:5000/api/v1/recipes
-Content-Type: application/json
-[
-{
-    "title": "Beef Tehari",
-    "image": "https://images.deepai.org/art-image/2f454155dda24c3092d82313c5418387/a-traditional-bangladeshi-beef-tehari-served-on-a-whi.jpg",
-    "ingredients": [
-      "Beef",
-      "Basmati Rice",
-      "Onion",
-      "Garlic",
-      "Ginger",
-      "Yogurt",
-      "Spices"
-    ],
-    "instructions": "Cook beef with spices. Add rice and simmer until fully cooked.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 90,
-    "categories": ["Lunch", "Dinner"],
-    "likeCount": 35,
-    "userEmail": "bdfoodlover@example.com",
-    "userName": "Ayesha"
-  },
-  {
-    "title": "Shorshe Ilish",
-    "image": "https://images.deepai.org/art-image/dab0727e89d749f181a2b26550ba8ee8/hilsa-fish-cooked-in-mustard-sauce-shorshe-ilish-serv.jpg",
-    "ingredients": [
-      "Hilsa Fish",
-      "Mustard Paste",
-      "Green Chili",
-      "Mustard Oil",
-      "Salt",
-      "Turmeric"
-    ],
-    "instructions": "Marinate hilsa. Cook in mustard paste with oil and green chilies.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 40,
-    "categories": ["Lunch", "Dinner"],
-    "likeCount": 28,
-    "userEmail": "ilishking@example.com",
-    "userName": "Reza"
-  },
-  {
-    "title": "Chicken Rezala",
-    "image": "https://images.deepai.org/art-image/d95e3d7921f1457f832c3ce005c26946/white-chicken-curry-bangladeshi-chicken-rezala-in-a-c.jpg",
-    "ingredients": [
-      "Chicken",
-      "Onion Paste",
-      "Yogurt",
-      "Ginger",
-      "Garlic",
-      "Cardamom",
-      "Cloves",
-      "Ghee"
-    ],
-    "instructions": "Slow-cook chicken in white curry with aromatic spices and yogurt.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 60,
-    "categories": ["Dinner"],
-    "likeCount": 20,
-    "userEmail": "rezalaqueen@example.com",
-    "userName": "Sumaiya"
-  },
-  {
-    "title": "Chingri Malai Curry",
-    "image": "https://images.deepai.org/art-image/747917527f894e3982dd1b95d9d299da/bangladeshi-prawn-coconut-curry-chingri-malai-curry-p.jpg",
-    "ingredients": [
-      "Prawns",
-      "Coconut Milk",
-      "Onion",
-      "Garlic",
-      "Ginger",
-      "Turmeric",
-      "Green Chili"
-    ],
-    "instructions": "Cook prawns in coconut milk with spices until creamy and tender.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 45,
-    "categories": ["Dinner", "Seafood"],
-    "likeCount": 32,
-    "userEmail": "malailover@example.com",
-    "userName": "Farhan"
-  },
-  {
-    "title": "Panta Ilish",
-    "image": "https://images.deepai.org/art-image/fcf2a5d912aa4eb4b3ec2296cada6d17/panta-ilish-fermented-rice-with-fried-hilsa-fish-slic.jpg",
-    "ingredients": [
-      "Fermented Rice",
-      "Hilsa Fry",
-      "Onion",
-      "Green Chili",
-      "Mustard Oil",
-      "Salt"
-    ],
-    "instructions": "Soak rice overnight. Serve with fried hilsa and mustard oil toppings.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 20,
-    "categories": ["Breakfast", "Traditional"],
-    "likeCount": 40,
-    "userEmail": "tradition@example.com",
-    "userName": "Mamun"
-  },
-  {
-    "title": "Patishapta Pitha",
-    "image": "https://images.deepai.org/art-image/36e6f7c602a5472ab520d4e9ab19cbf4/bengali-patishapta-pitha-soft-rice-flour-crepes-rolle.jpg",
-    "ingredients": ["Rice Flour", "Coconut", "Jaggery", "Milk", "Cardamom"],
-    "instructions": "Make thin crepes, stuff with coconut-jaggery filling, and roll.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 35,
-    "categories": ["Dessert", "Traditional"],
-    "likeCount": 18,
-    "userEmail": "pithalover@example.com",
-    "userName": "Shirin"
-  },
-  {
-    "title": "Butter Chicken",
-    "image": "https://images.deepai.org/art-image/d9420ff50d6847f1a0ae63987db0ee6a/authentic-italian-margherita-pizza-with-mozzarella-ch.jpg",
-    "ingredients": ["Chicken", "Butter", "Tomato", "Cream", "Spices"],
-    "instructions": "Cook chicken with spices. Make tomato-based sauce with cream and butter. Combine and simmer.",
-    "cuisine": "Indian",
-    "prepTime": 45,
-    "categories": ["Dinner", "Spicy"],
-    "likeCount": 12,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Tacos al Pastor",
-    "image": "https://images.deepai.org/art-image/b5baf97e05f04ddea5d146c3cc7c65cb/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
-    "ingredients": ["Pork", "Pineapple", "Onion", "Tortilla", "Chili"],
-    "instructions": "Grill pork with spices, serve in tortilla with pineapple and onion.",
-    "cuisine": "Mexican",
-    "prepTime": 35,
-    "categories": ["Lunch"],
-    "likeCount": 18,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Margherita Pizza",
-    "image": "https://images.deepai.org/art-image/b5baf97e05f04ddea5d146c3cc7c65cb/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
-    "ingredients": ["Dough", "Tomato Sauce", "Mozzarella", "Basil"],
-    "instructions": "Spread sauce on dough, add cheese and basil. Bake until crust is golden.",
-    "cuisine": "Italian",
-    "prepTime": 25,
-    "categories": ["Dinner", "Vegetarian"],
-    "likeCount": 22,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Sushi Rolls",
-    "image": "https://images.deepai.org/art-image/06fe76ea68974d67aa54501c1111c88c/variety-of-colorful-sushi-rolls-with-salmon-tuna-avoc.jpg",
-    "ingredients": ["Rice", "Nori", "Fish", "Cucumber", "Avocado"],
-    "instructions": "Layer rice on nori, add fillings, and roll tightly. Slice and serve.",
-    "cuisine": "Japanese",
-    "prepTime": 50,
-    "categories": ["Lunch", "Healthy"],
-    "likeCount": 9,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Tom Yum Soup",
-    "image": "https://images.deepai.org/art-image/6d46f6ee7d8d4b07a61bf4b334c62261/hot-and-sour-thai-tom-yum-soup-with-shrimp-mushrooms-.jpg",
-    "ingredients": ["Shrimp", "Lemongrass", "Mushroom", "Lime", "Chili"],
-    "instructions": "Boil broth with lemongrass and lime leaves. Add shrimp and veggies.",
-    "cuisine": "Thai",
-    "prepTime": 30,
-    "categories": ["Dinner", "Soup"],
-    "likeCount": 14,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Miso Ramen",
-    "image": "https://images.deepai.org/art-image/d1f02bcc80564822a5c95170d69afec8/japanese-miso-ramen-bowl-with-sliced-pork-boiled-egg-.jpg",
-    "ingredients": ["Ramen Noodles", "Miso", "Egg", "Corn", "Pork"],
-    "instructions": "Cook noodles, prepare miso broth. Add toppings and serve hot.",
-    "cuisine": "Japanese",
-    "prepTime": 40,
-    "categories": ["Dinner"],
-    "likeCount": 19,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Beef Pho",
-    "image": "https://images.deepai.org/art-image/e90c5bf903c641d1a3ce2c7a3f5c2ee9/vietnamese-pho-bowl-with-thin-beef-slices-rice-noodle.jpg",
-    "ingredients": ["Beef", "Rice Noodles", "Cinnamon", "Ginger", "Onion"],
-    "instructions": "Simmer beef broth with spices. Add noodles and sliced beef.",
-    "cuisine": "Vietnamese",
-    "prepTime": 60,
-    "categories": ["Soup", "Dinner"],
-    "likeCount": 15,
-    "userEmail": "muhommodshahjalal@gmail.com"
-  },
-  {
-    "title": "Shahi Korma",
-    "image": "https://images.deepai.org/art-image/61419ff13576440da09d1da537c2f449/traditional-bangladeshi-shahi-korma-in-a-rich-creamy-.jpg",
-    "ingredients": ["Mutton", "Yogurt", "Cream", "Nuts", "Spices"],
-    "instructions": "Cook meat with creamy sauce and aromatic spices until tender.",
-    "cuisine": "Bangladeshi",
-    "prepTime": 75,
-    "categories": ["Dinner", "Festive"],
-    "likeCount": 23,
-    "userEmail": "muhommodshahjalal@gmail.com"
+    "text": "Do not grieve; indeed Allah is with us. — Surah At-Tawbah 9:40",
+    "author": "Quran",
+    "submittedBy": "umar@example.com",
+    "status": "pending"
   }
 ]
 
-
-
-
-## payment request
-POST http://localhost:5000/create-ssl-payment
-Content-Type: application/json
-{
-    "total_amount": 100,
-    "currency": "BDT",
-    "shipping_method": "Courier",
-    "product_name": "Computer.",
-    "product_category": "Electronic",
-    "product_profile": "general",
-    "cus_name": "Customer Name",
-    "cus_email": "customer@example.com",
-    "cus_add1": "Dhaka",
-    "cus_add2": "Dhaka",
-    "cus_city": "Dhaka",
-    "cus_state": "Dhaka",
-    "cus_postcode": "1000",
-    "cus_country": "Bangladesh",
-    "cus_phone": "01711111111",
-    "cus_fax": "01711111111"
-}

@@ -43,7 +43,7 @@ const getQuotes = async (req, res, next) => {
     });
     sendResponose(res, {
       success: true,
-      message: "All coffees fetched successfully",
+      message: "All quotes fetched successfully",
       data: response,
     });
   } catch (error) {
