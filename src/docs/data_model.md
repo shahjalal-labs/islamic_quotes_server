@@ -16,3 +16,15 @@
 ```
 
 ## 📌 Quotes Collection
+
+```json
+{
+  "_id": "ObjectId",
+  "text": "string", // Islamic quote text
+  "author": "string", // Quran, Hadith, or Scholar name
+  "submittedBy": "ObjectId", // Reference to Users Collection
+  "status": "string (pending | approved)",
+  "createdAt": "Date",
+  "updatedAt": "Date"
+}
+```

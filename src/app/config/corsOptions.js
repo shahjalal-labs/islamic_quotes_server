@@ -1,8 +1,8 @@
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://flavor-book-recent.surge.sh",
-    "https://flavor-book.surge.sh",
+    "islamicquotes.surge.sh",
+    "http://localhost:5174",
   ],
   credentials: true,
 };
