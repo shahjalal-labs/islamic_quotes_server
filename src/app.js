@@ -9,6 +9,8 @@ import dotenv from "dotenv";
 import { SubmissionRoutes } from "./App/modules/submission/submission.route.js";
 import corsOptions from "./App/config/corsOptions.js";
 import { rootRoute } from "./App/modules/root/root.route.js";
+import { QuoteRoutes } from "./App/modules/quotes/quotes.route.js";
+import { UserRoutes } from "./App/modules/users/users.route.js";
 dotenv.config();
 
 const app = express();
@@ -19,6 +21,8 @@ app.use("/", rootRoute);
 app.use("/api/v1/auth", AuthRoutes);
 app.use("/api/v1/assignments", AssignmentRoutes);
 app.use("/api/v1/submission", SubmissionRoutes);
+app.use("/api/v1/quotes", QuoteRoutes);
+app.use("/api/v1/users", UserRoutes);
 app.use(globalErrorHandler);
 app.use(notFound);
 

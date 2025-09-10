@@ -7,7 +7,10 @@ const verifyEmail = async (req, res, next) => {
     req?.body?.creatorEmail ||
     req?.body?.studentEmail ||
     req?.body?.email ||
-    req?.body?.evaluatedBy;
+    req?.body?.evaluatedBy ||
+    req?.body?.submittedByEmail;
+  console.log(clientEmail, "[1;31mclientEmail in verifyEmail.js at line 6[0m");
+
   if (clientEmail !== jwtEmail) {
     return res.status(401).json({
       success: false,

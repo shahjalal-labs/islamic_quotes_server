@@ -13,7 +13,7 @@ export const generateToken = (payload) => {
 
 export const verifyToken = (req, res, next) => {
   const token = req?.cookies?.token;
-  console.log(token, "jwt.js", 12);
+  // console.log(token, "inside verify token jwt.js", 16);
   if (!token) {
     return res
       .status(401)
